@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Калькулятор: линейная и векторная алгебра</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Калькулятор по линейной и векторной алгебре</h1>
+    <nav>
+      <button class="on" data-tab="tab-matrix">Матрицы</button>
+      <button data-tab="tab-slau">СЛАУ</button>
+      <button data-tab="tab-vector">Векторы</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ========== МАТРИЦЫ ========== -->
+    <section class="panel" id="tab-matrix">
+      <div class="inputs">
+        <div class="box"><h3>Матрица A</h3><div id="gridA"></div></div>
+        <div class="box"><h3>Матрица B</h3><div id="gridB"></div></div>
+        <div class="box"><h3>Число</h3><div id="scalarM"></div><button class="ex" id="exMatrix">Пример из лекции</button></div>
+      </div>
+      <div class="commands" id="cmdMatrix"></div>
+      <div class="out" id="outMatrix"><p class="hint">Введите данные, выберите операцию — здесь появятся шаги решения и ответ.</p></div>
+    </section>
+
+    <!-- ========== СЛАУ ========== -->
+    <section class="panel" id="tab-slau" hidden>
+      <div class="inputs">
+        <div class="box"><h3>Система AX = B &nbsp;<small>(последний столбец — свободные члены)</small></h3><div id="gridS"></div>
+          <button class="ex" id="exSlau">Пример 3×3</button></div>
+      </div>
+      <div class="commands" id="cmdSlau"></div>
+      <div class="out" id="outSlau"><p class="hint">Выберите метод решения.</p></div>
+    </section>
+
+    <!-- ========== ВЕКТОРЫ ========== -->
+    <section class="panel" id="tab-vector" hidden>
+      <div class="inputs">
+        <div class="box"><h3>Размерность</h3>
+          <select id="vecDim"><option>2</option><option selected>3</option><option>4</option><option>5</option><option>6</option></select>
+          <div id="scalarV"></div><button class="ex" id="exVector">Пример</button></div>
+        <div class="box"><h3>Вектор a</h3><div id="vecA"></div></div>
+        <div class="box"><h3>Вектор b</h3><div id="vecB"></div></div>
+        <div class="box"><h3>Вектор c</h3><div id="vecC"></div></div>
+      </div>
+      <div class="commands" id="cmdVector"></div>
+      <div class="out" id="outVector"><p class="hint">Векторное и смешанное произведения — только для трёхмерных векторов.</p></div>
+    </section>
+  </main>
+
+  <!-- Экранная клавиатура (ввод мышью): пишет в клетку, где стоит курсор -->
+  <aside id="keypad">
+    <button data-key="7">7</button><button data-key="8">8</button><button data-key="9">9</button><button data-key="back">⌫</button>
+    <button data-key="4">4</button><button data-key="5">5</button><button data-key="6">6</button><button data-key="clear">C</button>
+    <button data-key="1">1</button><button data-key="2">2</button><button data-key="3">3</button><button data-key="next">→ клетка</button>
+    <button data-key="-">−</button><button data-key="0">0</button><button data-key=".">,</button><button data-key="/">/</button>
+    <button data-key="left">◀</button><button data-key="right">▶</button>
+  </aside>
+
+  <!-- Порядок важен: сначала основа, потом математика, потом интерфейс. -->
+  <script src="js/core/errors.js"></script>
+  <script src="js/core/fraction.js"></script>
+  <script src="js/core/log.js"></script>
+  <script src="js/math/matrix.js"></script>
+  <script src="js/math/vector.js"></script>
+  <script src="js/math/slau.js"></script>
+  <script src="js/ui/render.js"></script>
+  <script src="js/ui/inputs.js"></script>
+  <script src="js/ui/app.js"></script>
+</body>
+</html>

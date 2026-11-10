@@ -1,0 +1,40 @@
+/* Оформление. Цвета заданы переменными в :root — легко поменять тему. */
+:root { --bg:#f5f6fa; --card:#fff; --ink:#1f2430; --muted:#6b7280; --accent:#3b5bdb; --ok:#e7f5ec; --okb:#2f9e5b; --warn:#fff4e0; --warnb:#e8890c; --err:#fdecec; --errb:#d64545; }
+* { box-sizing: border-box; }
+body { margin:0; font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; background:var(--bg); color:var(--ink); padding-bottom:13rem; }
+header { background:var(--accent); color:#fff; padding:.8rem 1rem 0; }
+h1 { margin:0 0 .6rem; font-size:1.3rem; }
+nav button { background:transparent; color:#dbe4ff; border:0; padding:.6rem 1.1rem; font-size:1rem; cursor:pointer; border-radius:8px 8px 0 0; }
+nav button.on { background:var(--bg); color:var(--accent); font-weight:600; }
+main { max-width:1100px; margin:0 auto; padding:1rem; }
+.inputs { display:flex; flex-wrap:wrap; gap:1rem; }
+.box { background:var(--card); border-radius:10px; padding:.8rem 1rem; box-shadow:0 1px 3px #0001; }
+.box h3 { margin:0 0 .5rem; font-size:1rem; } .box small { color:var(--muted); font-weight:400; }
+.sizebar { display:flex; gap:1rem; margin-bottom:.5rem; color:var(--muted); font-size:.9rem; }
+.sizebar input, select { width:4rem; padding:.2rem; font-size:1rem; }
+.grid { display:grid; gap:.3rem; }
+.cell { width:3.6rem; padding:.45rem .2rem; font-size:1rem; text-align:center; border:1px solid #c5cad6; border-radius:6px; }
+.cell:focus { outline:2px solid var(--accent); border-color:var(--accent); }
+.cell.bad { background:var(--err); border-color:var(--errb); }
+.cell.free { background:#eef2ff; border-left:3px solid var(--accent); }
+.ex { margin-top:.6rem; background:none; border:1px dashed var(--accent); color:var(--accent); border-radius:6px; padding:.3rem .6rem; cursor:pointer; }
+.commands { display:flex; flex-wrap:wrap; gap:.5rem; margin:1rem 0; }
+.cmd { background:var(--accent); color:#fff; border:0; border-radius:8px; padding:.6rem 1rem; font-size:1rem; cursor:pointer; }
+.cmd:hover { filter:brightness(1.1); }
+.out { background:var(--card); border-radius:10px; padding:1rem 1.2rem; min-height:5rem; box-shadow:0 1px 3px #0001; overflow-x:auto; }
+.out h4 { margin:1rem 0 .3rem; color:var(--accent); }
+.hint, .time { color:var(--muted); font-size:.9rem; }
+.step { margin:.3rem 0; }
+.answer { background:var(--ok); border-left:4px solid var(--okb); padding:.5rem .8rem; border-radius:6px; font-weight:600; margin:.5rem 0; }
+.msg { padding:.8rem 1rem; border-radius:8px; font-weight:500; margin:0; }
+.msg.warn { background:var(--warn); border-left:4px solid var(--warnb); }
+.msg.error { background:var(--err); border-left:4px solid var(--errb); }
+.matbox { display:flex; align-items:center; gap:.6rem; margin:.5rem 0; }
+.matbox.answer { background:var(--ok); border-left:4px solid var(--okb); padding:.5rem .8rem; border-radius:6px; }
+.matbox .label { color:var(--muted); }
+table.mat { border-collapse:collapse; border-left:2px solid var(--ink); border-right:2px solid var(--ink); border-radius:6px; padding:0 .3rem; }
+table.mat td { padding:.15rem .6rem; text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap; }
+/* экранная клавиатура — закреплена внизу экрана */
+#keypad { position:fixed; bottom:0; left:0; right:0; display:grid; grid-template-columns:repeat(4,1fr); gap:.35rem; max-width:360px; margin:0 auto; padding:.5rem; background:#e6e9f2; border-radius:12px 12px 0 0; box-shadow:0 -2px 8px #0002; }
+#keypad button { padding:.7rem 0; font-size:1.1rem; border:0; border-radius:8px; background:#fff; cursor:pointer; }
+#keypad button:active { background:#cdd6ff; }
